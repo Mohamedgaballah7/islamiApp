@@ -1,0 +1,15 @@
+# flutter_native_splash-development.yaml
+flutter_native_splash:
+  background_image: assets/images/splashscreen.png
+
+
+
+
+
+  android_12:
+    background_image: assets/images/splashscreen.png
+
+
+
+  web: false
+
