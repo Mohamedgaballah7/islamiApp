@@ -1,5 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:islamiapproute/ui/home/tabs/hadeth/hadeth_tabs.dart';
+import 'package:islamiapproute/ui/home/tabs/quran/quran_tabs.dart';
+import 'package:islamiapproute/ui/home/tabs/radio/radio_tabs.dart';
+import 'package:islamiapproute/ui/home/tabs/sebha/sebha_tabs.dart';
+import 'package:islamiapproute/ui/home/tabs/time/time_tabs.dart';
 import 'package:islamiapproute/utils/app_assets.dart';
 import 'package:islamiapproute/utils/app_colors.dart';
 class HomeScreen extends StatefulWidget
@@ -19,11 +24,20 @@ class _HomeScreenState extends State<HomeScreen> {
     AppAssets.sebhaBg,
     AppAssets.radioBg,
     AppAssets.timeBg];
+  List<Widget>Tabs=[
+    QuranTab(),
+    HadethTab(),
+    SebhaTab(),
+    RadioTab(),
+    TimeTab()];
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset(ImagesBackground[selectedIndex],width: double.infinity,height: double.infinity,fit: BoxFit.fill,),
+        Image.asset(ImagesBackground[selectedIndex],
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.fill,),
         Scaffold(
           bottomNavigationBar: Theme(
             data: Theme.of(context).copyWith(
@@ -58,7 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Image.asset(AppAssets.islamiLogo),
+              Image.asset(AppAssets.islamiLogo,
+            ),
+              Expanded(child: Tabs[selectedIndex]),
             ],
           ),
         )
