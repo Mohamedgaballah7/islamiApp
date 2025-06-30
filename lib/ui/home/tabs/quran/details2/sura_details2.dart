@@ -62,7 +62,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen2> {
   }
 
   void loadFileSura(int index)async{
-    String fileContent=await rootBundle.loadString('assets/files/${index+1}.txt');
+    String fileContent=await rootBundle.loadString('assets/files/quran/${index+1}.txt');
     List<String>lines=fileContent.split('\n');
     for(int i=0;i<lines.length;i++){
       lines[i]+='[${i+1}] ';

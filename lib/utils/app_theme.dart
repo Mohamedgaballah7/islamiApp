@@ -14,6 +14,21 @@ class AppTheme {
         iconTheme: IconThemeData(
             color: AppColors.primaryColor)
     ),
-
+  );
+ static final BoxDecoration selectedBox = BoxDecoration(
+    color: AppColors.primaryColor,
+    borderRadius: BorderRadius.circular(16),
+    border: Border.all(
+      color: AppColors.primaryColor,
+      width: 2,
+    ),
+  );
+  static final BoxDecoration unselectedBox = BoxDecoration(
+    color: AppColors.blackColor,
+    borderRadius: BorderRadius.circular(16),
+    border: Border.all(
+      color: AppColors.primaryColor,
+      width: 2,
+    ),
   );
 }

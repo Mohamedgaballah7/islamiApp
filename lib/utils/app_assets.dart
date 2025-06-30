@@ -16,5 +16,9 @@ class AppAssets{
   static const String quranCornerRightBG='assets/images/qurancornerRightBG.png';
   static const String quranCornerLeftBG='assets/images/qurancornerleftBG.png';
   static const String quranCornerBottomBG='assets/images/qurancornerBottomBG.png';
+  static const String hadethCornerBottomBG='assets/images/hadeth_Mosque.png';
+  static const String hadethCornerLeftBG='assets/images/hadeth_left_corner.png';
+  static const String hadethCornerRightBG='assets/images/hadeth_right_corner.png';
+  static const String hadethContainerBG='assets/images/hadeth_container_background.png';
 
 }

@@ -18,7 +18,6 @@ class SuraDetailsScreen extends StatefulWidget {
 
 class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   List<String>verses=[];
-
   @override
   Widget build(BuildContext context) {
     var height=MediaQuery.of(context).size.height;
@@ -74,7 +73,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   }
 
   void loadFileSura(int index)async{
-    String fileContent=await rootBundle.loadString('assets/files/${index+1}.txt');
+    String fileContent=await rootBundle.loadString('assets/files/quran/${index+1}.txt');
     List<String>lines=fileContent.split('\n');
 
     verses=lines;
