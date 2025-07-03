@@ -16,6 +16,11 @@ class AppStyles{
     fontSize: 20,
     color: AppColors.whiteColor,);
 
+  static TextStyle bold24White=GoogleFonts.elMessiri(
+    fontWeight: FontWeight.bold,
+    fontSize: 24,
+    color: AppColors.whiteColor,);
+
   static TextStyle bold24Black=GoogleFonts.elMessiri(
     fontWeight: FontWeight.bold,
     fontSize: 24,
@@ -30,6 +35,11 @@ class AppStyles{
     fontWeight: FontWeight.bold,
     fontSize: 14,
     color: AppColors.blackColor,);
+
+  static TextStyle bold14White=GoogleFonts.elMessiri(
+    fontWeight: FontWeight.bold,
+    fontSize: 14,
+    color: AppColors.whiteColor,);
 
   static TextStyle bold20Primary=GoogleFonts.elMessiri(
     fontWeight: FontWeight.bold,
