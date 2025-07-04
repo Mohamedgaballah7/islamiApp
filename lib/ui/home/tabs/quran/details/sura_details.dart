@@ -5,7 +5,9 @@ import 'package:islamiapproute/ui/home/tabs/quran/details2/sura_details2.dart';
 import 'package:islamiapproute/ui/home/tabs/quran/quran_resources.dart';
 import 'package:islamiapproute/utils/app_assets.dart';
 import 'package:islamiapproute/utils/app_colors.dart';
+import 'package:provider/provider.dart';
 
+import '../../../../../providers/most_recently_provider.dart';
 import '../../../../../utils/app_styles.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
@@ -17,9 +19,18 @@ class SuraDetailsScreen extends StatefulWidget {
 }
 
 class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
+  late MostRecentlyProvider mostRecentlyProvider;
   List<String>verses=[];
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    mostRecentlyProvider.getNewMostRecentlySuraList();
+  }
   @override
   Widget build(BuildContext context) {
+    mostRecentlyProvider = Provider.of<MostRecentlyProvider>(context);
     var height=MediaQuery.of(context).size.height;
     var width=MediaQuery.of(context).size.width;
     int index=ModalRoute.of(context)?.settings.arguments as int;
@@ -27,7 +38,6 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
       {
         loadFileSura(index);
       }
-    loadFileSura(index);
      return Scaffold(
       appBar: AppBar(
         title: Text(QuranResources.englishQuranSurasList[index],
