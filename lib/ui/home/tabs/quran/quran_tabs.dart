@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:islamiapproute/ui/home/tabs/quran/most_recently.dart';
 import 'package:islamiapproute/ui/home/tabs/quran/quran_items.dart';
 import 'package:islamiapproute/ui/home/tabs/quran/quran_resources.dart';
 import 'package:islamiapproute/utils/app_assets.dart';
 import 'package:islamiapproute/utils/app_colors.dart';
 import 'package:islamiapproute/utils/app_styles.dart';
+import 'package:islamiapproute/utils/shared_preference.dart';
 
 import 'details/sura_details.dart';
 
@@ -53,42 +55,7 @@ class _QuranTabState extends State<QuranTab> {
             ),
           ),
           SizedBox(height: height*0.02,),
-          Text('Most Recently',style: AppStyles.bold16White,),
-          SizedBox(height: height*0.01,),
-          SizedBox(
-            height: height*0.18,
-            width: double.infinity,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-              return Container(
-                padding: EdgeInsets.all(14),
-               decoration: BoxDecoration(
-                 color: AppColors.primaryColor,
-                 borderRadius: BorderRadius.circular(18)
-               ),
-                child: Row(
-                  children:[
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center ,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                      Text('Al-Anbiya',style: AppStyles.bold14Black.copyWith(fontSize: 20),),
-                      Text('الأنبياء',style: AppStyles.bold14Black.copyWith(fontSize: 20),),
-                      Text('112 Verses',style: AppStyles.bold14Black,),
-                    ],
-                    ),
-                    Image.asset(AppAssets.mostRecently),
-                  ],
-                ),
-              );
-            },
-                separatorBuilder: (context, index) {
-                  return SizedBox(width: width*0.02,);
-                },
-                itemCount: 5),
-          ),
-          SizedBox(height: height*0.01,),
+          MostRecentlyWidget(),
           Text('Suras List',style: AppStyles.bold16White,),
           SizedBox(height: height*0.01,),
           Expanded(
@@ -97,6 +64,7 @@ class _QuranTabState extends State<QuranTab> {
                 itemBuilder: (context, index) {
                   return InkWell(
                           onTap: (){
+                            setNewMostRecentlySuraList(filterList[index]);
                             Navigator.of(context).pushNamed(SuraDetailsScreen.routeName,
                                 arguments: filterList[index]);
                           },
