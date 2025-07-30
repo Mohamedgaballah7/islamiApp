@@ -27,28 +27,32 @@ class _SebhaTabState extends State<SebhaTab> {
         child: Column(
           children: [
             Text('سَبِّحِ اسْمَ رَبِّكَ الأعلى', style: AppStyles.bold24White),
-            Stack(
-              alignment: Alignment.center,
-                children: [
+            Image.asset(AppAssets.sebhaHeadImage),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: width * 0.04),
+              child: Stack(
+                  alignment: Alignment.center,
+                  children: [
 
-              InkWell(
-                onTap: _onTap,
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                child:Transform.rotate(
-                    angle: _angle,
-                    child: Image.asset(AppAssets.sebhaImage,
-                    )),
-              ),
-              Column(
-                children: [
-                  SizedBox(height: height*0.08,),
-                  Text(sebhaText,style: AppStyles.bold24White,),
-                  SizedBox(height: height*0.02,),
-                  Text(sebhaNumber,style: AppStyles.bold24White,),
-                ],
-              )
-            ]),
+                    InkWell(
+                      onTap: _onTap,
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      child: Transform.rotate(
+                          angle: _angle,
+                          child: Image.asset(AppAssets.sebhaBodyImage,
+                          )),
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(height: height * 0.08,),
+                        Text(sebhaText, style: AppStyles.bold24White,),
+                        SizedBox(height: height * 0.02,),
+                        Text(sebhaNumber, style: AppStyles.bold24White,),
+                      ],
+                    )
+                  ]),
+            ),
           ],
         ),
       ),
@@ -57,7 +61,7 @@ class _SebhaTabState extends State<SebhaTab> {
   void _onTap() {
     setState(() {
       _tapCount++;
-      _angle += 2 * pi / 33;
+      _angle += pi / 33;
 
       if (_tapCount <= 33) {
         sebhaText = 'سبحان الله';

@@ -20,8 +20,11 @@ class AppAssets{
   static const String hadethCornerLeftBG='assets/images/hadeth_left_corner.png';
   static const String hadethCornerRightBG='assets/images/hadeth_right_corner.png';
   static const String hadethContainerBG='assets/images/hadeth_container_background.png';
-  static const String sebhaImage='assets/images/Sebha.png';
+  static const String sebhaBodyImage = 'assets/images/SebhaBody.png';
+  static const String sebhaHeadImage = 'assets/images/sebha_head.png';
   static const String radioMosque='assets/images/mosque_radio.png';
-
-
+  static const String prayTimeBg = 'assets/images/time_image_bg.png';
+  static const String prayTimeImage = 'assets/images/time_image.png';
+  static const String eveningAzkarImage = 'assets/images/evening_azkar_image.png';
+  static const String morningAzkarImage = 'assets/images/morning_azkar_image.png';
 }
